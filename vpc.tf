@@ -1,7 +1,11 @@
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+# Create VPC Terraform Module
+module "vpc" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.2.0"
 
-  tags = {
-     Name = "vpc-from-jenkins-terraform"
-  }
-}
+  # VPC Basic Details
+  name = "${var.vpc_name}"
+  cidr = var.cidr_block
+  azs  = var.vpc_azs
+
+ }
