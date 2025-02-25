@@ -3,4 +3,5 @@ resource "aws_vpc" "main" {
 
   tags = {
      Name = "vpc-from-jenkins-terraform"
+  }
 }
