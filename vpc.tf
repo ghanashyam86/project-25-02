@@ -6,6 +6,6 @@ module "vpc" {
   # VPC Basic Details
   name = "${var.vpc_name}"
   cidr = var.cidr_block
-  azs  = var.vpc_azs
+  azs  = data.aws_availability_zones.available.names
 
  }
