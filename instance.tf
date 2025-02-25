@@ -10,6 +10,6 @@ resource "aws_instance" "public-instance" {
   availability_zone       = data.aws_availability_zones.available.names[count.index]
   associate_public_ip_address = true
   tags = {
-      Name = "Public-instance-${count.index + 1}"
+      Name = "Public-server-${count.index + 1}"
   }
 }
